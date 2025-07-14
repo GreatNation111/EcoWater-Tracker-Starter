@@ -217,11 +217,11 @@ body.dark-mode th {
 }
 
 body.dark-mode #tipsList {
-    color: #edf2f7; /* Fixed to match dark mode text */
+  color: #2d3748;
 }
 
 body.dark-mode .stats h3 {
-    color: #edf2f7; /* Fixed to match dark mode text */
+    color: #2d3748; /* Fixed to match dark mode text */
 }
 
 body.dark-mode #greeting {

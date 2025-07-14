@@ -1,0 +1,22 @@
+{
+  "name": "EcoWater Tracker",
+  "short_name": "EcoWater",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#1a202c",
+  "theme_color": "#319795",
+  "orientation": "portrait",
+  "description": "Track and reduce your water usage sustainably.",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

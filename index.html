@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoWater Tracker - Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#319795" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+   <div id="splash-screen">
+    <img src="images/logo.svg" alt="EcoWater Logo" />
+    <h1>EcoWater Tracker</h1>
+  </div>
+
+<div id="main-content" class="content-hidden">
+
+  <header>
+    <h1>🌍 EcoWater Tracker</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="tips.html">Eco Tips</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <button onclick="toggleDarkMode()" class="dark-toggle">🌓</button>
+      <button onclick="logout()" class="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2 id="greeting">Welcome!</h2>
+    <p>Track your water usage and hit your weekly goals 💧</p>
+  </section>
+
+  <section class="stats" id="stats-section">
+    <h3>Your Daily Water Usage</h3>
+    <div class="stats-box">
+      <p><strong>Today:</strong> <span id="dailyUsage">0</span> L</p>
+      <p><strong>Your Weekly Goal:</strong> <span id="weeklyGoal">0</span> L</p>
+    </div>
+    <div style="margin-top: 10px;">
+      <input type="number" id="newGoalInput" placeholder="Set new weekly goal (litres)" />
+      <button onclick="updateGoal()">Update Goal</button>
+    </div>
+  </section>
+
+  <section class="input-section">
+    <h3>Log Water Usage</h3>
+    <input type="number" id="waterInput" placeholder="Litres used today" />
+    <button onclick="logWater()">Log Usage</button>
+  </section>
+
+  <canvas id="usageChart" height="150"></canvas>
+  <section class="progress-section">
+  <h3>Weekly Progress</h3>
+  <div class="progress-bar-container">
+    <div id="progressBar" class="progress-bar"></div>
+  </div>
+  <p><span id="progressPercent">0%</span> of weekly goal used</p>
+  <!-- Install App Button -->
+<div style="text-align: center; margin-top: 20px;">
+  <button id="installBtn" style="display: none;">📲 Install EcoWater Tracker</button>
+</div>
+
+</section>
+
+<section class="log-history">
+  <h3>Water Usage Log</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Litres</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="logTableBody">
+      <!-- Populated by JS -->
+    </tbody>
+  </table>
+</section>
+
+<section class="export-section">
+  <button onclick="exportCSV()">📁 Download Usage as CSV</button>
+</section>
+
+<section class="smart-tips">
+  <h3>💡 Smart Water-Saving Tips</h3>
+  <ul id="tipsList">
+    <!-- Dynamic tips from JS -->
+  </ul>
+</section>
+
+  <footer>
+    <p>EcoWater Tracker © 2025. Made to save every drop 💧</p>
+  </footer>
+</div>
+
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("Service Worker registered"));
+  }
+</script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
